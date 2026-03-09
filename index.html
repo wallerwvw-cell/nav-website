@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小鱼科技导航</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --accent: #ff6b6b;
+            --accent2: #4ecdc4;
+            --border: #333;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        header p { color: var(--text-muted); }
+        
+        /* Categories */
+        .category {
+            margin-bottom: 50px;
+        }
+        .category h2 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Cards Grid */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .card-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .card-title {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        
+        /* AI News Special Card */
+        .card.ai-news {
+            border: 2px solid var(--accent);
+            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1));
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        footer a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐟 小鱼科技导航</h1>
+            <p>发现优质AI资源，一个就够了</p>
+        </header>
+        
+        <!-- AI 日报 -->
+        <section class="category">
+            <h2>📰 今日AI资讯</h2>
+            <div class="cards">
+                <a href="https://wallerwvw-cell.github.io/ai-daily-news/" class="card ai-news">
+                    <div class="card-header">
+                        <div class="card-icon">🤖</div>
+                        <span class="card-title">AI 日报</span>
+                    </div>
+                    <p class="card-desc">每日AI新闻、技术文章、产品融资、人物观点 - 每天更新</p>
+                </a>
+            </div>
+        </section>
+        
+        <!-- AI 工具 -->
+        <section class="category">
+            <h2>🚀 AI 工具</h2>
+            <div class="cards">
+                <a href="https://chat.openai.com" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">💬</div>
+                        <span class="card-title">ChatGPT</span>
+                    </div>
+                    <p class="card-desc">OpenAI 最强对话AI</p>
+                </a>
+                <a href="https://claude.ai" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">🦉</div>
+                        <span class="card-title">Claude</span>
+                    </div>
+                    <p class="card-desc">Anthropic 出品的AI助手</p>
+                </a>
+                <a href="https://www.deepseek.com" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">🔮</div>
+                        <span class="card-title">DeepSeek</span>
+                    </div>
+                    <p class="card-desc">国产开源大模型</p>
+                </a>
+                <a href="https://www.minimax.io" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">🧠</div>
+                        <span class="card-title">MiniMax</span>
+                    </div>
+                    <p class="card-desc">国产AI大模型平台</p>
+                </a>
+            </div>
+        </section>
+        
+        <!-- 学习资源 -->
+        <section class="category">
+            <h2>📚 AI 学习</h2>
+            <div class="cards">
+                <a href="https://www.scikit-learn.org" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">📖</div>
+                        <span class="card-title">Scikit-learn</span>
+                    </div>
+                    <p class="card-desc">Python机器学习库</p>
+                </a>
+                <a href="https://pytorch.org" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">🔥</div>
+                        <span class="card-title">PyTorch</span>
+                    </div>
+                    <p class="card-desc">深度学习框架</p>
+                </a>
+                <a href="https://tensorflow.org" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <span class="card-title">TensorFlow</span>
+                    </div>
+                    <p class="card-desc">Google深度学习框架</p>
+                </a>
+                <a href="https://huggingface.co" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">🤗</div>
+                        <span class="card-title">Hugging Face</span>
+                    </div>
+                    <p class="card-desc">AI模型库和社区</p>
+                </a>
+            </div>
+        </section>
+        
+        <!-- 行业资讯 -->
+        <section class="category">
+            <h2>📡 行业资讯</h2>
+            <div class="cards">
+                <a href="https://news.ycombinator.com" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">🔶</div>
+                        <span class="card-title">Hacker News</span>
+                    </div>
+                    <p class="card-desc">科技创业最热社区</p>
+                </a>
+                <a href="https://www.36kr.com" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">🔷</div>
+                        <span class="card-title">36Kr</span>
+                    </div>
+                    <p class="card-desc">科技创投媒体</p>
+                </a>
+                <a href="https://www.theverge.com" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">📰</div>
+                        <span class="card-title">The Verge</span>
+                    </div>
+                    <p class="card-desc">科技媒体</p>
+                </a>
+                <a href="https://wired.com" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <span class="card-title">Wired</span>
+                    </div>
+                    <p class="card-desc">科技前沿报道</p>
+                </a>
+            </div>
+        </section>
+        
+        <!-- 开发工具 -->
+        <section class="category">
+            <h2>🛠️ 开发工具</h2>
+            <div class="cards">
+                <a href="https://github.com" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">🐙</div>
+                        <span class="card-title">GitHub</span>
+                    </div>
+                    <p class="card-desc">代码托管平台</p>
+                </a>
+                <a href="https://vercel.com" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">▲</div>
+                        <span class="card-title">Vercel</span>
+                    </div>
+                    <p class="card-desc">前端部署平台</p>
+                </a>
+                <a href="https://codepen.io" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">✏️</div>
+                        <span class="card-title">CodePen</span>
+                    </div>
+                    <p class="card-desc">前端代码实验</p>
+                </a>
+                <a href="https://stackoverflow.com" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">💬</div>
+                        <span class="card-title">Stack Overflow</span>
+                    </div>
+                    <p class="card-desc">程序员问答社区</p>
+                </a>
+            </div>
+        </section>
+        
+        <footer>
+            <p>🐟 小鱼科技导航 · 发现优质AI资源</p>
+            <p>由 <a href="https://github.com/wallerwvw-cell/ai-daily-news">AI 日报</a> 驱动</p>
+        </footer>
+    </div>
+</body>
+</html>
