@@ -7,13 +7,13 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --bg: #0f0f0f;
-            --card-bg: #1a1a1a;
-            --text: #e0e0e0;
-            --text-muted: #888;
+            --bg: #f5f5f5;
+            --card-bg: #ffffff;
+            --text: #333333;
+            --text-muted: #666666;
             --accent: #ff6b6b;
             --accent2: #4ecdc4;
-            --border: #333;
+            --border: #e0e0e0;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -35,6 +35,7 @@
             background: linear-gradient(135deg, var(--accent), var(--accent2));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         header p { color: var(--text-muted); }
         
@@ -67,10 +68,11 @@
             text-decoration: none;
             color: inherit;
             display: block;
+            border: 1px solid var(--border);
         }
         .card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .card-header {
@@ -102,7 +104,7 @@
         /* AI News Special Card */
         .card.ai-news {
             border: 2px solid var(--accent);
-            background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(78,205,196,0.1));
+            background: linear-gradient(135deg, rgba(255,107,107,0.05), rgba(78,205,196,0.05));
         }
         
         /* Footer */
@@ -128,12 +130,61 @@
         <section class="category">
             <h2>📰 今日AI资讯</h2>
             <div class="cards">
-                <a href="https://wallerwvw-cell.github.io/ai-daily-news/" class="card ai-news">
+                <a href="https://wallerwvw-cell.github.io/ai-daily-news/" class="card ai-news" target="_blank">
                     <div class="card-header">
                         <div class="card-icon">🤖</div>
                         <span class="card-title">AI 日报</span>
                     </div>
-                    <p class="card-desc">每日AI新闻、技术文章、产品融资、人物观点 - 每天更新</p>
+                    <p class="card-desc">每日AI新闻，技术文章，产品融资，人物观点</p>
+                </a>
+            </div>
+        </section>
+        
+        <!-- 优秀日报推荐 -->
+        <section class="category">
+            <h2>🌟 优秀AI日报推荐</h2>
+            <div class="cards">
+                <a href="https://github.com/Thysrael/Horizon" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">🌅</div>
+                        <span class="card-title">Horizon</span>
+                    </div>
+                    <p class="card-desc">中英文双语AI新闻聚合，双语生成、跨源去重</p>
+                </a>
+                <a href="https://github.com/Freelander/AI-Daily" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">📰</div>
+                        <span class="card-title">AI-Daily</span>
+                    </div>
+                    <p class="card-desc">《高军AI日报》每天1分钟获取精选AI信息</p>
+                </a>
+                <a href="https://github.com/vigorX777/ai-daily-digest" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <span class="card-title">AI Daily Digest</span>
+                    </div>
+                    <p class="card-desc">90个顶级技术博客抓取，AI多维评分筛选</p>
+                </a>
+                <a href="https://github.com/zeng9899/daily-ai-trending" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">🔥</div>
+                        <span class="card-title">Daily AI Trending</span>
+                    </div>
+                    <p class="card-desc">基于OpenClaw的GitHub AI热门项目日报</p>
+                </a>
+                <a href="https://github.com/sansan0/TrendRadar" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">📡</div>
+                        <span class="card-title">TrendRadar</span>
+                    </div>
+                    <p class="card-desc">AI舆情监控热点筛选，支持微信/飞书/钉钉推送</p>
+                </a>
+                <a href="https://github.com/eryajf/awesome-navigation" class="card" target="_blank">
+                    <div class="card-header">
+                        <div class="card-icon">🧭</div>
+                        <span class="card-title">Awesome Navigation</span>
+                    </div>
+                    <p class="card-desc">优质导航站搜集整理</p>
                 </a>
             </div>
         </section>
